@@ -1,10 +1,10 @@
 import React from 'react';
-import Aux from '../../hoc/Aux';
+import Ob from '../../hoc/Ob';
 import SearchBar from './Search/SearchBar';
 
 const navbar = (props) => {
   return (
-    <Aux>
+    <Ob>
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
         <div className="container pt-3 pb-3">
           <a className="navbar-brand">Blog</a>
@@ -42,7 +42,7 @@ const navbar = (props) => {
           </div>
         </div>
       </nav>
-    </Aux>
+    </Ob>
   );
 };
 

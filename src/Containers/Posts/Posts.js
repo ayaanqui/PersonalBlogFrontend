@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Aux from '../../hoc/Aux';
+import Ob from '../../hoc/Ob';
 import Post from '../../Components/Post/Post';
 import axios from 'axios';
 
@@ -18,7 +18,7 @@ class Posts extends Component {
 
   render() {
     return (
-      <Aux>
+      <Ob>
         <div className="row">
           {this.state.posts.map(post => {
             return (<Post
@@ -29,7 +29,7 @@ class Posts extends Component {
             />)
           })}
         </div>
-      </Aux>
+      </Ob>
     );
   }
 }

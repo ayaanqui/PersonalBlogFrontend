@@ -1,12 +1,12 @@
 import React from 'react';
-import Aux from './hoc/Aux';
+import Ob from './hoc/Ob';
 import Navbar from './Components/Navbar/Navbar';
 import Posts from './Containers/Posts/Posts';
 import Sidebar from './Containers/Sidebar/Sidebar';
 
 const app = () => {
   return (
-    <Aux>
+    <Ob>
       <Navbar />
 
       <div className="container mt-5">
@@ -22,7 +22,7 @@ const app = () => {
       <footer className="mt-5 mb-3">
         <p className="text-center text-muted small">&copy; Copyright { new Date().getFullYear() }. All rights reserved.</p>
       </footer>
-    </Aux>
+    </Ob>
   );
 }
 
