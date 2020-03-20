@@ -19,21 +19,13 @@ const navbar = (props) => {
                 <a className="nav-link">Home <span className="sr-only">(current)</span></a>
               </li>
               <li className="nav-item">
-                <a className="nav-link">Link</a>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown
-              </a>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a className="dropdown-item">Action</a>
-                  <a className="dropdown-item">Another action</a>
-                  <div className="dropdown-divider"></div>
-                  <a className="dropdown-item">Something else here</a>
-                </div>
+                <a className="nav-link">Posts</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled" tabIndex="-1" aria-disabled="true">Disabled</a>
+                <a className="nav-link">About</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link">Contact</a>
               </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">
