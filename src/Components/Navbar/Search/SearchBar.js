@@ -19,7 +19,7 @@ class SearchBar extends Component {
     if (searchInput !== "") {
       axios.get(`http://127.0.0.1:8000/api/posts/?q=${searchInput}&order_by=published`)
         .then(res => {
-          this.setState({searchResults: res.data});
+          this.setState({ searchResults: res.data });
         });
     }
   };
@@ -27,15 +27,24 @@ class SearchBar extends Component {
   render() {
     return (
       <Aux>
-        <input
-          className="form-control mr-sm-2 form-control-sm"
-          type="search"
-          placeholder="Search"
-          onChange={this.handleSearchInput}
-        />
+        <div className="dropdown">
+          <input
+            className="form-control mr-sm-2 form-control-sm"
+            id="searchToggle"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            type="search"
+            placeholder="Search"
+            onChange={this.handleSearchInput}
+          />
 
-        <div className="search-results">
-          <h4>Hi I am a search container</h4>
+          <div className="dropdown-menu" aria-labelledby="searchToggle">
+            {/* <a className="dropdown-item">Action</a>
+            <a className="dropdown-item">Another action</a> */}
+
+            <div className="pl-3 pr-3"><p>Start typing to see your search results</p></div>
+          </div>
         </div>
       </Aux>
     );
