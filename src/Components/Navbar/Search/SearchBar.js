@@ -3,10 +3,6 @@ import axios from "axios";
 import Aux from "../../../hoc/Ob";
 
 class SearchBar extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   state = {
     searchResults: [],
     showResults: false,
