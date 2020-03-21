@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Ob from '../../hoc/Ob';
 import Tag from '../../Components/Tag/Tag';
 
 class Tags extends Component {
@@ -17,7 +16,7 @@ class Tags extends Component {
 
   render() {
     return (
-      <Ob>
+      <React.Fragment>
         {this.state.tags.map(tag => {
           return (
             <Tag 
@@ -26,7 +25,7 @@ class Tags extends Component {
               key={tag.id + tag.slug}
             />);
         })}
-      </Ob>
+      </React.Fragment>
     );
   }
 }

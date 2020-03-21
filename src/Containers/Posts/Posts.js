@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Ob from '../../hoc/Ob';
 import Post from '../../Components/Post/Post';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 
 class Posts extends Component {
@@ -18,10 +19,10 @@ class Posts extends Component {
 
   render() {
     return (
-      <Ob>
-        <div className="row">
-          {this.state.posts.map(post => {
-            return (
+      <Row>
+        {this.state.posts.map(post => {
+          return (
+            <Col sm={6} className="mb-3">
               <Post
                 title={post.title}
                 summary={post.summary}
@@ -31,10 +32,10 @@ class Posts extends Component {
                 slug={post.slug}
                 key={post.id + "_" + post.slug}
               />
-            )
-          })}
-        </div>
-      </Ob>
+            </Col>
+          )
+        })}
+      </Row>
     );
   }
 }

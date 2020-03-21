@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Ob from "../../../hoc/Ob";
 
 class SearchBar extends Component {
   state = {
@@ -22,7 +21,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <Ob>
+      <React.Fragment>
         <div className="dropdown" style={{position: "relative"}}>
           <input
             className="form-control mr-sm-2 form-control-sm"
@@ -53,7 +52,7 @@ class SearchBar extends Component {
             </div>
           </div>
         </div>
-      </Ob>
+      </React.Fragment>
     );
   }
 }

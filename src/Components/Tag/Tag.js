@@ -1,8 +1,15 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 
 const tag = (props) => {
   return (
-    <button type="button" className="btn btn-sm btn-light mr-1 mb-1">{props.name}</button>
+    <Button
+      variant="light"
+      size="sm"
+      className="mr-1 mb-1"
+    >
+      {props.name}
+    </Button>
   );
 };
 

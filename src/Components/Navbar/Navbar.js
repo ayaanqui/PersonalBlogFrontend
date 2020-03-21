@@ -1,40 +1,31 @@
 import React from 'react';
-import Ob from '../../hoc/Ob';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
 import SearchBar from './Search/SearchBar';
 
 const navbar = (props) => {
   return (
-    <Ob>
-      <nav className="navbar navbar-expand-lg navbar-light bg-white">
-        <div className="container pt-3 pb-3">
-          <a className="navbar-brand">Blog</a>
+    <Navbar bg="white" variant="light" expand="lg">
+      <Container className="pt-3 pb-3">
+        <Navbar.Brand href="#home">Blog</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbar-menu" className="btn btn-sm btn-light" />
 
-          <button className="btn btn-sm btn-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
+        <Navbar.Collapse id="navbar-menu">
+          <Nav className="mr-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#posts">Posts</Nav.Link>
+            <Nav.Link href="#contact">Contact</Nav.Link>
+            <Nav.Link href="#about">About</Nav.Link>
+          </Nav>
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item active">
-                <a className="nav-link">Home <span className="sr-only">(current)</span></a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link">Posts</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link">About</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link">Contact</a>
-              </li>
-            </ul>
-            <form className="form-inline my-2 my-lg-0" autoComplete="off">
-              <SearchBar />
-            </form>
-          </div>
-        </div>
-      </nav>
-    </Ob>
+          <Form inline>
+            <SearchBar />
+          </Form>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
