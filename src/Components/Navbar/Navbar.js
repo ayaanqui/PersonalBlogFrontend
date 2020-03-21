@@ -28,7 +28,7 @@ const navbar = (props) => {
                 <a className="nav-link">Contact</a>
               </li>
             </ul>
-            <form className="form-inline my-2 my-lg-0">
+            <form className="form-inline my-2 my-lg-0" autoComplete="off">
               <SearchBar />
             </form>
           </div>
