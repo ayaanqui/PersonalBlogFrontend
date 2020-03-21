@@ -28,8 +28,6 @@ class SearchBar extends Component {
             className="form-control mr-sm-2 form-control-sm"
             id="searchToggle"
             data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
             type="search"
             placeholder="Search"
             onChange={this.handleSearchInput}
