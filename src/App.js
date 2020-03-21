@@ -1,5 +1,4 @@
 import React from 'react';
-import Ob from './hoc/Ob';
 import Navbar from './Components/Navbar/Navbar';
 import Posts from './Containers/Posts/Posts';
 import Sidebar from './Containers/Sidebar/Sidebar';
