@@ -21,12 +21,17 @@ class Posts extends Component {
       <Ob>
         <div className="row">
           {this.state.posts.map(post => {
-            return (<Post
-              title={post.title}
-              summary={post.summary}
-              tags={post.tags}
-              published={post.published}
-            />)
+            return (
+              <Post
+                title={post.title}
+                summary={post.summary}
+                tags={post.tags}
+                published={post.published}
+                id={post.id}
+                slug={post.slug}
+                key={post.id + "_" + post.slug}
+              />
+            )
           })}
         </div>
       </Ob>

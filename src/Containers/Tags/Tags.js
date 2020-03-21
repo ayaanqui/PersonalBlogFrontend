@@ -23,6 +23,7 @@ class Tags extends Component {
             <Tag 
               name={tag.name}
               slug={tag.slug}
+              key={tag.id + tag.slug}
             />);
         })}
       </Ob>
