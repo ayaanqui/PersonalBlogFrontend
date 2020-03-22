@@ -16,14 +16,8 @@ class Posts extends Component {
 
   componentDidMount() {
     axios.get('http://127.0.0.1:8000/api/posts/?order_by=published&limit=9&page=1')
-      .then(res => {
-        const data = res.data
-        this.setState({ posts: data, loading: false });
-      })
-      .catch(error => {
-        this.setState({ error: true, loading: false });
-
-      });
+      .then(res => this.setState({ posts: res.data, loading: false }))
+      .catch(() => this.setState({ error: true, loading: false }))
   }
 
   getPosts = () => {
