@@ -11,7 +11,7 @@ const app = () => {
     <React.Fragment>
       <Navbar />
       
-      <Container>
+      <Container className="mt-3">
         <Row>
           <Col lg={8}>
             <Posts />
