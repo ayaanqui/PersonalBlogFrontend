@@ -9,7 +9,10 @@ const navbar = (props) => {
   return (
     <Navbar bg="white" variant="light" expand="lg">
       <Container className="pt-3 pb-3">
-        <Navbar.Brand href="#home">Blog</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          <span className="brand-logo pr-2"></span>
+          <span>Personal Blog</span>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-menu" className="btn btn-sm btn-light" />
 
         <Navbar.Collapse id="navbar-menu">
