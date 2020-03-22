@@ -28,7 +28,6 @@ class Posts extends Component {
 
   getPosts = () => {
     if (this.state.loading) {
-      console.log("Loading data");
       return (
         <Jumbotron fluid style={{ backgroundColor: "#fff" }}>
           <Container className="text-center">
