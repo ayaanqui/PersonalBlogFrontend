@@ -60,6 +60,7 @@ class Posts extends Component {
               <Col sm={6} className="mb-3">
                 <Post
                   title={post.title}
+                  image={post.image}
                   summary={post.summary}
                   tags={post.tags}
                   published={post.published}
