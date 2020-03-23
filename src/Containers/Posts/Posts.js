@@ -9,14 +9,26 @@ import axios from 'axios';
 
 class Posts extends Component {
   state = {
+    count: 0,
+    next: null,
+    prev: null,
     posts: [],
     error: false,
     loading: true,
   }
 
   componentDidMount() {
-    axios.get('http://127.0.0.1:8000/api/posts/?order_by=published&limit=9&page=1')
-      .then(res => this.setState({ posts: res.data, loading: false }))
+    const pageSize = 9;
+    axios.get(`http://127.0.0.1:8000/api/posts/?order_by=published&pagination=True&page_size=${pageSize}`)
+      .then(res => this.setState(
+        {
+          posts: res.data.results,
+          count: res.data.count,
+          next: res.data.next,
+          prev: res.data.previous,
+          loading: false
+        }
+      ))
       .catch(() => this.setState({ error: true, loading: false }))
   }
 
