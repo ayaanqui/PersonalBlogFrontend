@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Spinner from 'react-bootstrap/Spinner';
-import axios from "axios";
 
 class SearchBar extends Component {
   state = {
