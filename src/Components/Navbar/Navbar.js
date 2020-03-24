@@ -24,7 +24,9 @@ const navbar = (props) => {
           </Nav>
 
           <Form inline>
-            <SearchBar />
+            <SearchBar
+              searchPosts={props.searchPosts}
+            />
           </Form>
         </Navbar.Collapse>
       </Container>

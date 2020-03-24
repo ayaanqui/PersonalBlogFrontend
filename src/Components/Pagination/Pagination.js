@@ -19,7 +19,7 @@ const renderPageButtons = (maxPages, currentPage, pageSize, fetchPosts) => {
 
 const pagination = props => {
   return (
-    <Pagination>
+    <Pagination size="sm">
       <Pagination.First
         onClick={() => props.fetchPosts(props.pageSize, 1)}
       />

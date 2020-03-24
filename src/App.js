@@ -7,18 +7,18 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 import Pagination from './Components/Pagination/Pagination';
+import PostDetail from './Components/PostDetail/PostDetail';
 
 class App extends Component {
   state = {
     pageSize: 9,
     currentPage: 1,
     count: 0,
-    next: null,
-    prev: null,
     posts: [],
     error: false,
     loading: true,
     apiURI: "http://127.0.0.1:8000/api/posts/?order_by=published",
+    showModal: false,
   }
 
   fetchPosts = (pageSize, page) => {
@@ -30,8 +30,6 @@ class App extends Component {
           posts: res.data.results,
           currentPage: page,
           count: res.data.count,
-          next: res.data.next,
-          prev: res.data.previous,
           loading: false
         }
       ))
@@ -43,14 +41,26 @@ class App extends Component {
       ));
   };
 
-  componentDidMount() {
+  searchPosts = query => {
+    this.setState(
+      {
+        apiURI: `http://127.0.0.1:8000/api/posts/?order_by=published&q=${query}`
+      }
+    );
+    console.log(query);
     this.fetchPosts(this.state.pageSize, this.state.currentPage);
-  }
+  };
 
-  render() {
+  componentDidMount = () => {
+    this.fetchPosts(this.state.pageSize, this.state.currentPage);
+  };
+
+  render = () => {
     return (
       <React.Fragment>
-        <Navbar />
+        <Navbar
+          searchPosts={this.searchPosts}
+        />
 
         <Container className="mt-3">
           <Row>
@@ -61,17 +71,14 @@ class App extends Component {
                 posts={this.state.posts}
               />
 
-              <div style={{ maxWidth: "100%", margin: "0 auto" }}>
-                <Pagination
-                  pageSize={this.state.pageSize}
-                  currentPage={this.state.currentPage}
-                  count={this.state.count}
-                  next={this.state.next}
-                  prev={this.state.prev}
-                  fetchPosts={this.fetchPosts}
-                  maxPages={Math.ceil(this.state.count/this.state.pageSize)}
-                />
-              </div>
+              <Pagination
+                className="mt-5"
+                pageSize={this.state.pageSize}
+                currentPage={this.state.currentPage}
+                count={this.state.count}
+                fetchPosts={this.fetchPosts}
+                maxPages={Math.ceil(this.state.count / this.state.pageSize)}
+              />
             </Col>
 
             <Sidebar />
@@ -83,7 +90,7 @@ class App extends Component {
         </footer>
       </React.Fragment>
     );
-  }
+  };
 }
 
 export default App;
