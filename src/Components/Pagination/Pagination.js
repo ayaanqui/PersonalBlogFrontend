@@ -10,6 +10,7 @@ const renderPageButtons = (maxPages, currentPage, pageSize, fetchPosts) => {
       <Pagination.Item
         onClick={() => fetchPosts(pageSize, i)}
         active={currentPage === i}
+        key={"page_button_" + i}
       >
         {i}
       </Pagination.Item >
