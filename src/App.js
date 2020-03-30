@@ -7,7 +7,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 import Pagination from './Components/Pagination/Pagination';
-import PostDetail from './Components/PostDetail/PostDetail';
 
 class App extends Component {
   state = {
